@@ -1,17 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 *{
-margin: 0;
-padding: 0;
-font-weight: 440;
+    margin: 0;
+    padding: 0;
 }
 
-:root{
---celereiro-vermelho: #780000ff;
---tijolo-de-fogo: #c1121fff;
---chicote-de-mamao: #fdf0d5ff;
---azul-da-prussia: #003049ff;
---superioridade-aerea-azul: #669bbcff;
---fontes-titulo: "Platypi", serif;
---fonte-texto: "Josefin Sans", sans-serif;
+:root {
+    --preto: rgb(0, 0, 0);
+    --vermelho: rgb(247, 4, 4);
+    --azul: rgb(17, 0, 255);
+    --vermlho-escuro: rgb(125, 0, 0);
+    --cinza: rgb(46, 46, 46);
+    --fonte-texto:"Playfair Display", serif;
+    --fonte-titulo: "Bebas Neue", sans-serif;
+}
+
+body{
+    background-color: var(--azul-fraco);
+    color: var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--fonte-texto);
+}
+
+.caixa-principal{
+    background-color: var(--azul-forte);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+.titulo{
+    color: var(--salmao);
+    font-family: var(--fonte-titulo);
+}
+
+button{
+    background-color: var(--azul);
+    color: var(--salmao);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+    margin: 10px 10px;   
+}
+
+button:hover{
+    background-color: var(--azul-fraco);
 }
