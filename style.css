@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-weight: 400;
 }
 
-:root {
-    --preto: rgb(0, 0, 0);
-    --vermelho: rgb(247, 4, 4);
-    --azul: rgb(17, 0, 255);
-    --vermlho-escuro: rgb(125, 0, 0);
-    --cinza: rgb(46, 46, 46);
-    --fonte-texto:"Playfair Display", serif;
-    --fonte-titulo: "Bebas Neue", sans-serif;
+:root{
+    --azul:#0ed4fb;
+    --verde:#3baa0f;
+    --roxo:#4710ad;
+    --azul-forte:#1310e9;
+    --font-texto:"Playwrite NZ", cursive;
+    --fonte-titulo:"Playwrite NZ", cursive;
 }
 
 body{
-    background-color: var(--azul-fraco);
-    color: var(--branco);
+    background-color: var(--azul-forte);
+    color: var(--roxo);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: var(--fonte-texto);
+    font-family: var(--font-texto);
 }
 
 .caixa-principal{
-    background-color: var(--azul-forte);
+    background-color: var(--azul);
     width: 90%;
     max-width: 600px;
     text-align: center;
@@ -33,20 +33,20 @@ body{
 }
 
 .titulo{
-    color: var(--salmao);
+    color: var(--roxo);
     font-family: var(--fonte-titulo);
 }
 
 button{
-    background-color: var(--azul);
-    color: var(--salmao);
+    background-color: var(--roxo);
+    color: var(--azul);
     border: none;
     border-radius: 15px;
     padding: 15px;
     transition: 0.3s;
-    margin: 10px 10px;   
+    margin: 10px 10px;
 }
 
 button:hover{
-    background-color: var(--azul-fraco);
+    background-color: var(--verde);
 }

@@ -1,112 +1,120 @@
 const caixaPrincipal = document.querySelector('.caixa-principal');
-const caixaPerguntas = document.querySelector('.caixa-perguntas');
+const caixaPergunta = document.querySelector('.caixa-perguntas');
 const caixaAlternativas = document.querySelector('.caixa-alternativas');
 const caixaResultado = document.querySelector('.caixa-resultado');
 const textoResultado = document.querySelector('.texto-resultado');
-
-const perguntas = [
+const pergunta = [
     {
-        enunciado: "Enunciado 01",
+        enunciado: "pergunta 1",
         alternativas: [
             {
-                texto:"alternativa 01",
-                afirmacao: "resultado 01"
+                texto:"voçê descobriu que recentemente o racismo e a discriminação vem aumentando?",
+                afirmacao:  "Nos cenário atual, o preconceito e as práticas discriminação "
             },
             {
-                texto:"alternativa 02",
-                afirmacao: "resultado 02"
-            }   
+                texto:"Mais voçê não liga para esse assunto porque voçê acha que isso não e importante para voçê?",
+                afirmacao: "resultado 2"
+            }
+            
+          
+        ]
+    }, 
+    {
+        enunciado: "",
+        alternativas: [
+            {
+                texto:"Aos 30 anos voçê viu pessoas fazendo racismo e discriminação pela cor da pele?",
+                afirmacao: "resultado3"
+            },
+            {
+                texto:"Aos 33 anos voçê decidiu se juntar a um grupo contra o racismo e a discriminação?",
+                afirmacao: "resultado 4"
+            }
+            
+            
+        ]
+    },    
+    {
+        enunciado: "Pergunta 3",
+        alternativas: [
+            {
+               texto:"Alternativas 5",
+               afirmacao: "resultado 5"
+            },
+            {
+               texto:"Alternativas 6",
+               afirmacao: "resultado 6"
+            }
+            
+            
         ]
     },
     {
-        enunciado: "Enunciado 02",
+        enunciado: "Pergunta 4",
         alternativas: [
             {
-                texto: "alternativa 03",
-                afirmacao: "resultado03"
+               texto:"Alternativas 5",
+               afirmacao: "resultado 5"
             },
             {
-                texto: "alternativa 04",
-                afirmacao: "resultado 04"
+               texto:"Alternativas 6",
+               afirmacao: "resultado 6"
             }
+            
+            
         ]
     },
     {
-        enunciado: "Enunciado 03",
+        enunciado: "Pergunta 5",
         alternativas: [
             {
-                texto: "alternativa 05",
-                afirmacao: "resultado 05"
+               texto:"Alternativas 5",
+               afirmacao: "resultado 5"
             },
             {
-                texto: "alternativa 06",
-                afirmacao: "resultado 06"
+               texto:"Alternativas 6",
+               afirmacao: "resultado 6"
             }
-        ]
-    },
-    {
-        enunciado: "Enunciado 04",
-        alternativas: [
-            {
-                texto: "alternativa 07",
-                afirmacao: "resultado 07"
-            },
-            {
-                texto: "alternativa 08",
-                afirmacao: "resultado 08"
-            }
-        ]
-    },
-    {
-        enunciado: "Enunciado 05",
-        alternativas: [
-            {
-                texto: "alternativa 09",
-                afirmacao: "resultado 09"
-            },
-            {
-                texto: "alternativa 10",
-                afirmacao: "resultado 10"
-            }
+            
+            
         ]
     },
 ]
-
 let atual = 0;
 let perguntaAtual;
-let historiaFinal = "";
+let historiaFinal = ""
 
-function mostrarPerguntas(){
-    if(atual >= perguntas.length){
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = ""
-    mostrarAlternativas();
+function mostraPergunta() {
+   if (atual >= pergunta.length){
+    mostraResultado();
+    return;
+   }
+    perguntaAtual = pergunta[atual];
+    caixaPergunta.textContent = pergunta.enunciado;
+    caixaAlternativas.textContent="";
+    mostraAlternativas();
+    
 }
 
-function mostrarAlternativas(){
+function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa))
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
+        botaoAlternativas.addEventListener("click", () => respostaSelacionada(alternativa))
+        caixaAlternativas.appendChild(botaoAlternativas) 
+    }   
 }
-
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+function respostaSelacionada(opcaoSelacionada){
+    const afirmacao = opcaoSelacionada.afirmacao;
+    historiaFinal += afirmacao + " "
     atual++;
-    mostrarPerguntas();
+    mostraPergunta();
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = " Inicio do texto... "
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+   caixaPergunta.textContent =" Inicio do texto..."
+   textoResultado.textContent = historiaFinal;
+   caixaAlternativas.textContent = "";
 }
-
-mostrarPerguntas();
+ 
+mostraPergunta();
